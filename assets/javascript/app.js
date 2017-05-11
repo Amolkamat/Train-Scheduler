@@ -9,7 +9,7 @@ $(document).ready(function(){
     messagingSenderId: "415752004524"
   };
   firebase.initializeApp(config);
-	var database= firebase.database();
+	var trainData= new Firebase(https:train-scheduler-286d0.firebaseio.com/)
 
 	// 2. Button for adding Trains
 	$("#addTrainBtn").on("click", function(){
@@ -39,7 +39,7 @@ $(document).ready(function(){
 		}
 
 		// pushing trainInfo to Firebase
-		database.push(firebase.database());
+		trainData.push(newTrain);
 
 		// clear text-boxes
 		$("#trainNameInput").val("");
