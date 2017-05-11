@@ -9,7 +9,10 @@ $(document).ready(function(){
     messagingSenderId: "415752004524"
   };
   firebase.initializeApp(config);
-	var trainData= new Firebase(https:train-scheduler-286d0.firebaseio.com/)
+	// Not sure what this next line is supposed to do, did you click android app instead of
+	// web app by accident?
+	// var database= new Firebase(https:train-scheduler-286d0.firebaseio.com/);
+	var database = firebase.database();
 
 	// 2. Button for adding Trains
 	$("#addTrainBtn").on("click", function(){
@@ -39,7 +42,7 @@ $(document).ready(function(){
 		}
 
 		// pushing trainInfo to Firebase
-		trainData.push(newTrain);
+		database.push(newTrain);
 
 		// clear text-boxes
 		$("#trainNameInput").val("");
@@ -52,7 +55,7 @@ $(document).ready(function(){
 		return false;
 	});
 
-	database.on("child_added", function(childSnapshot, prevChildKey){
+	database.ref().on("child_added", function(childSnapshot, prevChildKey){
 
 		console.log(childSnapshot.val());
 
