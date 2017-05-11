@@ -43,7 +43,11 @@ $(document).ready(function(){
 		}
 
 		// pushing trainInfo to Firebase
+<<<<<<< HEAD
 		database.ref().push(newTrain);
+=======
+		database.push(newTrain);
+>>>>>>> 10fecbeb9bd63608051480c920e8559138731fda
 
 		// clear text-boxes
 		$("#trainNameInput").val("");
