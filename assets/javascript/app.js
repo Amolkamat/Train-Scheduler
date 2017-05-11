@@ -22,6 +22,7 @@ $(document).ready(function(){
 		var lineName = $("#lineInput").val().trim();
 		var destination = $("#destinationInput").val().trim();
 		var trainTimeInput = moment($("#trainTimeInput").val().trim(), "HH:mm").subtract(10, "years").format("X");;
+		
 		var frequencyInput = $("#frequencyInput").val().trim();
 
 		// Test for variables entered
